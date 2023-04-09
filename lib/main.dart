@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trainui/Selected_Game.dart';
 import 'package:trainui/pages/Home_page.dart';
+
 void main() {
-  runApp(const Screens());
+  runApp(Screens());
 }
 
 class Screens extends StatelessWidget {
-  const Screens({super.key});
+  Screens({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(brightness: Brightness.dark),
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+    return ChangeNotifierProvider(
+      create: (context) {
+        return Select();
+      },
+      child: MaterialApp(
+        theme: ThemeData(brightness: Brightness.dark),
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
     );
   }
 }

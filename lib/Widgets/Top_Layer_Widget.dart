@@ -9,11 +9,10 @@ class topLayerWidget extends StatelessWidget {
     super.key,
     this.deivcehight,
     this.devicewidth,
-    this.SelectedGame,
   });
   final deivcehight;
   final devicewidth;
-  final SelectedGame;
+
   @override
   Widget build(BuildContext context) {
     return Padding(

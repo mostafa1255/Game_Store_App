@@ -39,9 +39,27 @@ class _HomePageState extends State<HomePage> {
           topLayerWidget(
               deivcehight: devicehight,
               devicewidth: devicewidth,
-              SelectedGame: selectedGame),
+              ),
         ],
       ),
     );
   }
+
+  /*Widget futuregameinfoWidget() {
+    return SizedBox(
+        height: devicehight * 0.12,
+        width: devicewidth,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(featuredGames[selectedGame].title),
+            Row(
+              children: [],
+            )
+          ],
+        ));
+  }
+  */
 }

@@ -1,34 +1,58 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:trainui/Selected_Game.dart';
 import 'package:trainui/data.dart';
 
 class futuregameinfiWidget extends StatelessWidget {
   futuregameinfiWidget({
     super.key,
-    devicehight = 0,
-    devicewidth = 0,
-    this.selectedGame = 1,
-  })  : _devicehight = devicehight,
-        _devicewidth = devicewidth;
+    required devicehight,
+    required devicewidth,
+  })  : devicehight = devicehight,
+        devicewidth = devicewidth;
 
-  var selectedGame;
-  final _devicehight;
-  final _devicewidth;
+  final devicehight;
+  final devicewidth;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: _devicehight * 0.12,
-        width: _devicewidth,
+        height: devicehight * 0.12,
+        width: devicewidth,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(featuredGames[selectedGame].title),
+            Text(
+              featuredGames[
+                      Provider.of<Select>(context, listen: true).selectedGame]
+                  .title,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: devicehight * 0.04,
+              ),
+            ),
             Row(
-              children: [],
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                ...featuredGames.map<Widget>((_game) {
+                  double circleRaduis = devicehight * 0.004;
+                  return Container(
+                    height: circleRaduis * 2,
+                    width: circleRaduis * 2,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(100)),
+                  );
+                }).toList()
+              ],
             )
           ],
         ));
   }
 }
+
+int count = 0;
