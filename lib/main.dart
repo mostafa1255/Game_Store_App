@@ -11,7 +11,7 @@ class Screens extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
       debugShowCheckedModeBanner: false,
-      home:const HomePage(),
+      home: HomePage(),
     );
   }
 }
