@@ -33,7 +33,9 @@ class futuregameinfiWidget extends StatelessWidget {
                 fontSize: devicehight * 0.04,
               ),
             ),
-             SizedBox(height: devicehight * 0.01,),
+            SizedBox(
+              height: devicehight * 0.01,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -47,11 +49,11 @@ class futuregameinfiWidget extends StatelessWidget {
 
                   double circleRaduis = devicehight * 0.004;
                   return Container(
-                    margin:EdgeInsets.only(right: devicewidth * 0.015),
+                    margin: EdgeInsets.only(right: devicewidth * 0.015),
                     height: circleRaduis * 2,
                     width: circleRaduis * 2,
                     decoration: BoxDecoration(
-                        color: isActive ? Colors.green :Colors.grey,
+                        color: isActive ? Colors.green : Colors.grey,
                         borderRadius: BorderRadius.circular(100)),
                   );
                 }).toList()
@@ -61,5 +63,3 @@ class futuregameinfiWidget extends StatelessWidget {
         ));
   }
 }
-
-int count = 0;

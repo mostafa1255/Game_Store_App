@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trainui/Widgets/Future_gameInfo.dart';
+import 'package:trainui/Widgets/Scrollable_Game_Widget.dart';
+import 'package:trainui/data.dart';
 import 'package:trainui/pages/Home_page.dart';
 
 import 'Top_Bar.dart';
@@ -31,6 +33,7 @@ class topLayerWidget extends StatelessWidget {
             devicehight: deivcehight,
             devicewidth: devicewidth,
           ),
+          ScrollableGameWidget(hight: deivcehight * 0.24, width: deivcehight, Showtitle:true ,gameData: games,)
         ],
       ),
     );
