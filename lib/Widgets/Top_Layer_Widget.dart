@@ -26,6 +26,7 @@ class topLayerWidget extends StatelessWidget {
             devicehight: deivcehight,
             devicewidth: devicewidth,
           ),
+          SizedBox(height: deivcehight * 0.13,),
           futuregameinfiWidget(
             devicehight: deivcehight,
             devicewidth: devicewidth,

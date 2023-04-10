@@ -13,8 +13,6 @@ class topBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(devicehight);
-    print(devicehight);
     return SizedBox(
       height: devicehight * 0.13,
       child: Row(

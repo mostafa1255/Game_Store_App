@@ -39,7 +39,7 @@ class _futuresgameWidgetState extends State<futuresgameWidget> {
             Provider.of<Select>(context, listen: false).selectedGame = index;
           });
         },
-        scrollDirection: Axis.vertical,
+        scrollDirection: Axis.horizontal,
         children: [
           ...featuredGames.map<Widget>((_game) {
             return Container(

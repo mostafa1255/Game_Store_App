@@ -33,18 +33,25 @@ class futuregameinfiWidget extends StatelessWidget {
                 fontSize: devicehight * 0.04,
               ),
             ),
+             SizedBox(height: devicehight * 0.01,),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
               children: [
                 ...featuredGames.map<Widget>((_game) {
+                  bool isActive = _game.title ==
+                      featuredGames[Provider.of<Select>(context, listen: true)
+                              .selectedGame]
+                          .title;
+
                   double circleRaduis = devicehight * 0.004;
                   return Container(
+                    margin:EdgeInsets.only(right: devicewidth * 0.015),
                     height: circleRaduis * 2,
                     width: circleRaduis * 2,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: isActive ? Colors.green :Colors.grey,
                         borderRadius: BorderRadius.circular(100)),
                   );
                 }).toList()

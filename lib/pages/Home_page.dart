@@ -19,11 +19,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   var devicewidth;
   var devicehight;
-  var selectedGame;
+
   @override
   void initState() {
     super.initState();
-    selectedGame = 0;
+  
   }
 
   @override
@@ -37,29 +37,11 @@ class _HomePageState extends State<HomePage> {
           futuresgameWidget(devicehight: devicehight, devicewidth: devicewidth),
           gridiantBoxWidget(devicehight: devicehight, devicewidth: devicewidth),
           topLayerWidget(
-              deivcehight: devicehight,
-              devicewidth: devicewidth,
-              ),
+            deivcehight: devicehight,
+            devicewidth: devicewidth,
+          ),
         ],
       ),
     );
   }
-
-  /*Widget futuregameinfoWidget() {
-    return SizedBox(
-        height: devicehight * 0.12,
-        width: devicewidth,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(featuredGames[selectedGame].title),
-            Row(
-              children: [],
-            )
-          ],
-        ));
-  }
-  */
 }
