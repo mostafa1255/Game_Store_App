@@ -44,7 +44,7 @@ class ScrollableGameWidget extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(top: hight * 0.04),
-                child: Showtitle ?  Text(
+                child: Showtitle ? Text(
                   game.title,
                   style: TextStyle(color: Colors.white, fontSize: hight * 0.08),
                 ) : Container()
