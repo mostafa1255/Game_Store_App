@@ -23,7 +23,6 @@ class ScrollableGameWidget extends StatelessWidget {
       height: hight,
       width: width,
       child: ListView(
-        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         children: gameData!.map((game) {
           return Column(
@@ -32,7 +31,7 @@ class ScrollableGameWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: width * 0.01),
+                padding: EdgeInsets.symmetric(horizontal: width * 0.01),
                 child: Container(
                   height: hight * 0.8,
                   width: width * 0.2,
@@ -44,12 +43,11 @@ class ScrollableGameWidget extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 10),
-                child: Text(
+                padding: EdgeInsets.only(top: hight * 0.04),
+                child: Showtitle ?  Text(
                   game.title,
-                  style:
-                      TextStyle(color: Colors.white, fontSize: hight * 0.08),
-                ),
+                  style: TextStyle(color: Colors.white, fontSize: hight * 0.08),
+                ) : Container()
               )
             ],
           );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
+import 'package:trainui/Selected_Game.dart';
 import 'package:trainui/data.dart';
 
 class FutureGameBanner extends StatelessWidget {
@@ -18,7 +20,7 @@ class FutureGameBanner extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: NetworkImage(featuredGames[3].coverImage.url),
+          image: NetworkImage(featuredGames[ Provider.of<Select>(context, listen: true).selectedGame].coverImage.url),
         ),
       ),
     );

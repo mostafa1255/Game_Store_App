@@ -51,7 +51,16 @@ class topLayerWidget extends StatelessWidget {
           FutureGameBanner(
             height: deivcehight ,
             width: devicewidth,
-          )
+          ),
+            Padding(
+            padding: EdgeInsets.symmetric(vertical: deivcehight * 0.01),
+            child: ScrollableGameWidget(
+              hight: deivcehight * 0.15,
+              width: deivcehight,
+              Showtitle: false,
+              gameData: games2
+            ),
+          ),
         ],
       ),
     );
