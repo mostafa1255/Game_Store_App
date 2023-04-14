@@ -23,14 +23,35 @@ class ScrollableGameWidget extends StatelessWidget {
       height: hight,
       width: width,
       child: ListView(
+        physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
-        children: gameData!.map((_game) {
-          return Container(
-            height: hight * 0.5,
-            width: width * 0.3,
-            decoration: BoxDecoration(
-                image:
-                    DecorationImage(image: NetworkImage(_game.coverImage.url))),
+        children: gameData!.map((game) {
+          return Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: width * 0.01),
+                child: Container(
+                  height: hight * 0.8,
+                  width: width * 0.2,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(7),
+                      image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(game.coverImage.url))),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Text(
+                  game.title,
+                  style:
+                      TextStyle(color: Colors.white, fontSize: hight * 0.08),
+                ),
+              )
+            ],
           );
         }).toList(),
       ),
